@@ -7,8 +7,8 @@ if(NOT DEFINED ENV{MACOSX_DEPLOYMENT_TARGET})
 endif()
 
 # Global options which can bet set on command line e.g.: cmake -DSMTG_ENABLE_VST3_PLUGIN_EXAMPLES=OFF ...
-option(SMTG_ENABLE_VST3_PLUGIN_EXAMPLES "Enable VST 3 Plug-in Examples" ON)
-option(SMTG_ENABLE_VST3_HOSTING_EXAMPLES "Enable VST 3 Hosting Examples" ON)
+option(SMTG_ENABLE_VST3_PLUGIN_EXAMPLES "Enable VST 3 Plug-in Examples" OFF)
+option(SMTG_ENABLE_VST3_HOSTING_EXAMPLES "Enable VST 3 Hosting Examples" OFF)
 option(SMTG_ENABLE_VSTGUI_SUPPORT "Enable VSTGUI Support" ON)
 
 #-------------------------------------------------------------------------------
@@ -69,6 +69,7 @@ add_subdirectory(public.sdk/source/vst/interappaudio)
 #---Add Wrappers (AU, AAX)-----------------------
 if(NOT "${SMTG_COREAUDIO_SDK_PATH}" STREQUAL "")
     add_subdirectory(public.sdk/source/vst/auwrapper)
+    include(SMTG_AddVST3AuV2)
 endif()
 
 if(NOT "${SMTG_AAX_SDK_PATH}" STREQUAL "")
