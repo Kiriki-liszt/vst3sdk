@@ -3,7 +3,8 @@
 	url = https://github.com/steinbergmedia/vst3_base.git
 [submodule "cmake"]
 	path = cmake
-	url = https://github.com/steinbergmedia/vst3_cmake.git
+	url = https://github.com/Kiriki-liszt/vst3_cmake.git
+	branch = v3.7.9_mod
 [submodule "doc"]
 	path = doc
 	url = https://github.com/steinbergmedia/vst3_doc.git
